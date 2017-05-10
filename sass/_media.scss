@@ -1,0 +1,60 @@
+
+// RWD Media Queries
+
+@mixin rwd($media){
+	@if $media == xs {
+		@media only screen and (max-width: $break-x-small) {
+			@content;
+		}
+	}
+	@else if $media == sm {
+		@media only screen and (min-width: $break-x-small + 1) and (max-width: $break-small) {
+			@content;
+		}
+	}
+	@else if $media == md {
+		@media only screen and (min-width: $break-small + 1) and (max-width: $break-mid - 1) {
+			@content;
+		}
+	}
+	@else if $media == lg {
+		@media only screen and (min-width: $break-mid) and (max-width: $break-large) {
+			@content;
+		}
+	}
+	@else if $media == lgmax {
+		@media only screen and (min-width: $break-large) {
+			@content;
+		}
+	}
+}
+
+@mixin rwd_down($media){
+	@media only screen and (max-width: $media + 'px') {
+		@content;
+	}
+}
+
+@mixin rwd_up($media){
+	@media only screen and (min-width: $media + 'px') {
+		@content;
+	}
+}
+
+@mixin rwd_range($min,$max){
+	@media only screen and (min-width: $min + 'px') and (max-width: $max + 'px') {
+		@content;
+	}
+}
+
+@mixin rwd_height_down($media){
+	@media only screen and (max-height: $media + 'px') {
+		@content;
+	}
+}
+
+@mixin rwd_height_up($media){
+	@media only screen and (min-height: $media + 'px') {
+		@content;
+	}
+}

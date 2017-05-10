@@ -1,1 +1,0 @@
-# TCJewelry.github.io
